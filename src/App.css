@@ -1,0 +1,363 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+* {
+  box-sizing: border-box;
+}
+:root {
+  /*html 배경*/
+  --theme-bg-light: #eef0f5;
+  --theme-bg-dark: #121212;
+  /*html 폰트 컬러*/
+  --theme-color-light: black;
+  --theme-color-dark: rgb(255 255 255 / 90%);
+
+  /*메뉴 폰트 컬러*/
+  --menu-text-color-light: white;
+  --menu-text-color-dark: white;
+  /*메뉴 배경*/
+  --menu-bg-light: #ffa36d;
+  --menu-bg-dark: #000000;
+  /*메뉴 호버 배경*/
+  --menu-hover-bg-light: #f57931;
+  --menu-hover-bg-dark: #23262d;
+
+  /*카드 테두리 색*/
+  --card-border-light: #d6d5e8;
+  --card-border-dark: #d6d5e8;
+
+  /*Submit 버튼 배경*/
+  --submit-bg-light: #ffa36d;
+  --submit-bg-dark: #ffa36d;
+  /*Submit 버튼 호버 배경*/
+  --submit-hover-bg-light: #f57931;
+  --submit-hover-bg-dark: #f57931;
+  /*Submit 버튼 비활성화 배경*/
+  --submit-disabled-bg-light: #cccccc;
+  --submit-disabled-bg-dark: #cccccc;
+  /*Submit 버튼 비활성화 폰트 컬러*/
+  --submit-disabled-color-light: #666666;
+  --submit-disabled-color-dark: #666666;
+  /*Submit 버튼 폰트 컬러*/
+  --submit-color-light: white;
+  --submit-color-dark: white;
+
+  /*페이징 버튼 배경*/
+  --paging-bg-light: #f5f5f5;
+  --paging-bg-dark: #f5f5f5;
+  /*페이징 버튼 폰트 컬러*/
+  --paging-color-light: #666666;
+  --paging-color-dark: #666666;
+  /*페이징 버튼 호버 배경*/
+  --paging-hover-bg-light: rgba(0, 0, 0, 10%);
+  --paging-hover-bg-dark: rgba(0, 0, 0, 10%);
+
+  /*ThemeStatusToggle 아이콘 배경*/
+  --theme-toggle-icon-bg-light: #f69e38;
+  --theme-toggle-icon-bg-dark: #333333;
+  /*ThemeStatusToggle 배경*/
+  --theme-toggle-bg-light: white;
+  --theme-toggle-bg-dark: #999999;
+  /*ThemeStatusToggle 아이콘 컬러*/
+  --theme-toggle-icon-color-light: white;
+  --theme-toggle-icon-color-dark: white;
+
+  /* CheckIconToggle 체크한 경우 아이콘 색   */
+  --theme-toggle-checked-icon-color-light: #3bd569;
+  --theme-toggle-checked-icon-color-dark: #3bd569;
+  /* CheckIconToggle 체크한 경우 아이콘 배경   */
+  --theme-toggle-checked-icon-bg-light: white;
+  --theme-toggle-checked-icon-bg-dark: white;
+  /* CheckIconToggle 체크 해제한 경우 아이콘 색   */
+  --theme-toggle-unchecked-icon-color-light: #cccccc;
+  --theme-toggle-unchecked-icon-color-dark: #cccccc;
+  /* CheckIconToggle 체크 해제한 경우 아이콘 색   */
+  --theme-toggle-unchecked-icon-bg-light: white;
+  --theme-toggle-unchecked-icon-bg-dark: white;
+
+  /*TextField 배경*/
+  --textField-bg-light: white;
+  --textField-bg-dark: #333333;
+  /*TextField 테두리*/
+  --textField-border-light: #d6d5e8;
+  --textField-border-dark: #d6d5e8;
+  /*TextField active 테두리 컬러*/
+  --textField-active-border-light: #ffa36d;
+  --textField-active-border-dark: #ffa36d;
+  /*TextField disabled 배경 */
+  --textField-disabled-bg-light: #cccccc;
+  --textField-disabled-bg-dark: #cccccc;
+  /*TextField disabled 컬러*/
+  --textField-disabled-color-light: #666666;
+  --textField-disabled-color-dark: #666666;
+  /*TextField 에러 테두리 컬러*/
+  --textField-error-border-light: #e21a1a;
+  --textField-error-border-dark: #e21a1a;
+
+  /*Dropdown 배경*/
+  --dropdown-bg-light: white;
+  --dropdown-bg-dark: #333333;
+  /*Dropdown Item hover 배경*/
+  --dropdown-item-hover-bg-light: #eef0f5;
+  --dropdown-item-hover-bg-dark: #eef0f5;
+  /*Dropdown 테두리*/
+  --dropdown-border-color-light: #d6d5e8;
+  --dropdown-border-color-dark: #7d7f90;
+  /* Dropdown disabled 배경 */
+  --dropdown-disabled-bg-light: #cccccc;
+  --dropdown-disabled-bg-dark: #cccccc;
+  /* Dropdown disabled 컬러 */
+  --dropdown-disabled-color-light: #d6d5e8;
+  --dropdown-disabled-color-dark: #d6d5e8;
+
+  /*Checkbox 테두리*/
+  --checkbox-border-color-light: #ffa36d;
+  --checkbox-border-color-dark: #ffa36d;
+  /*Checkbox Checked 테두리 및 체크 컬러*/
+  --checkbox-checked-color-light: #ffa36d;
+  --checkbox-checked-color-dark: #ffa36d;
+  /*Checkbox 배경*/
+  --checkbox-bg-light: white;
+  --checkbox-bg-dark: white;
+}
+/* dark */
+html.dark {
+  /* html */
+  --theme-bg: var(--theme-bg-dark);
+  --theme-color: var(--theme-color-dark);
+
+  /* Menu */
+  --menu-bg: var(--menu-bg-dark);
+  --menu-text-color: var(--menu-text-color-dark);
+  --menu-hover-bg: var(--menu-hover-bg-dark);
+
+  /* ThemeStatus */
+  --theme-toggle-bg: var(--theme-toggle-bg-dark);
+  --theme-toggle-icon-bg: var(--theme-toggle-icon-bg-dark);
+  --theme-toggle-icon-color: var(--theme-toggle-icon-color-dark);
+  --theme-toggle-checked-icon-color: var(
+    --theme-toggle-checked-icon-color-dark
+  );
+  --theme-toggle-unchecked-icon-color: var(
+    --theme-toggle-unchecked-icon-color-dark
+  );
+  --theme-toggle-checked-icon-bg: var(--theme-toggle-checked-icon-bg-dark);
+  --theme-toggle-unchecked-icon-bg: var(--theme-toggle-unchecked-icon-bg-dark);
+
+  /* SubmitButton */
+  --submit-bg: var(--submit-bg-dark);
+  --submit-color: var(--submit-color-dark);
+  --submit-hover-bg: var(--submit-hover-bg-dark);
+  --submit-disabled-bg: var(--submit-disabled-bg-dark);
+  --submit-disabled-color: var(--submit-disabled-color-dark);
+
+  /* Paging Button */
+  --paging-bg: var(--paging-bg-dark);
+  --paging-hover-bg: var(--paging-hover-bg-dark);
+  --paging-text-color: var(--paging-color-dark);
+
+  /* Card */
+  --card-border: var(--card-border-dark);
+
+  /*TextField*/
+  --textField-bg: var(--textField-bg-dark);
+  --textField-border: var(--textField-border-dark);
+  --textField-active-border: var(--textField-active-border-dark);
+  --textField-disabled-bg: var(--textField-disabled-bg-dark);
+  --textField-disabled-color: var(--textField-disabled-color-dark);
+  --textField-error-border: var(--textField-error-border-dark);
+
+  /*Dropdown */
+  --dropdown-bg: var(--dropdown-bg-dark);
+  --dropdown-item-hover-bg: var(--dropdown-item-hover-bg-dark);
+  --dropdown-border-color: var(--dropdown-border-color-dark);
+  --dropdown-disabled-bg: var(--dropdown-disabled-bg-dark);
+  --dropdown-disabled-color: var(--dropdown-disabled-color-dark);
+
+  /*Checkbox*/
+  --checkbox-border-color: var(--checkbox-border-color-dark);
+  --checkbox-checked-color: var(--checkbox-checked-color-dark);
+  --checkbox-bg: var(--checkbox-bg-dark);
+}
+/* light */
+
+html {
+  font-family: Noto Sans KR;
+  /* html */
+  --theme-bg: var(--theme-bg-light);
+  --theme-color: var(--theme-color-light);
+
+  /* Menu */
+  --menu-bg: var(--menu-bg-light);
+  --menu-text-color: var(--menu-text-color-light);
+  --menu-hover-bg: var(--menu-hover-bg-light);
+
+  /* ThemeStatus */
+  --theme-toggle-bg: var(--theme-toggle-bg-light);
+  --theme-toggle-icon-bg: var(--theme-toggle-icon-bg-light);
+  --theme-toggle-icon-color: var(--theme-toggle-icon-color-light);
+  --theme-toggle-checked-icon-color: var(
+    --theme-toggle-checked-icon-color-light
+  );
+  --theme-toggle-unchecked-icon-color: var(
+    --theme-toggle-unchecked-icon-color-light
+  );
+  --theme-toggle-checked-icon-bg: var(--theme-toggle-checked-icon-bg-light);
+  --theme-toggle-unchecked-icon-bg: var(--theme-toggle-unchecked-icon-bg-light);
+
+  /* SubmitButton */
+  --submit-bg: var(--submit-bg-light);
+  --submit-color: var(--submit-color-light);
+  --submit-hover-bg: var(--submit-hover-bg-light);
+  --submit-disabled-bg: var(--submit-disabled-bg-light);
+  --submit-disabled-color: var(--submit-disabled-color-light);
+
+  /* Paging Button */
+  --paging-bg: var(--paging-bg-light);
+  --paging-text-color: var(--paging-color-light);
+  --paging-hover-bg: var(--paging-hover-bg-light);
+
+  /* Card */
+  --card-border: var(--card-border-light);
+
+  /*TextField*/
+  --textField-bg: var(--textField-bg-light);
+  --textField-border: var(--textField-border-light);
+  --textField-active-border: var(--textField-active-border-light);
+  --textField-disabled-bg: var(--textField-disabled-bg-light);
+  --textField-disabled-color: var(--textField-disabled-color-light);
+  --textField-error-border: var(--textField-error-border-light);
+
+  /*Dropdown */
+  --dropdown-bg: var(--dropdown-bg-light);
+  --dropdown-item-hover-bg: var(--dropdown-item-hover-bg-light);
+  --dropdown-border-color: var(--dropdown-border-color-light);
+  --dropdown-disabled-bg: var(--dropdown-disabled-bg-light);
+  --dropdown-disabled-color: var(--dropdown-disabled-color-light);
+
+  /*Checkbox*/
+  --checkbox-border-color: var(--checkbox-border-color-light);
+  --checkbox-checked-color: var(--checkbox-checked-color-light);
+  --checkbox-bg: var(--checkbox-bg-light);
+}
+.menu {
+  .menu-title {
+    font-size: 32px;
+  }
+  ul {
+    list-style-type: none;
+    /* margin: 0; */
+    li {
+      width: 100%;
+      /* border-radius: 10px; */
+      height: 40px;
+      /* align-content: center; */
+      /* text-align: center; */
+    }
+  }
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--foreground);
+  /* background: var(--bg-gray-200); */
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.login-wrapper {
+  width: 100%;
+  height: 100%;
+
+  overflow-x: hidden;
+  background: linear-gradient(124.7deg, #504db9 4.11%, #ff8e58 73.88%);
+  align-content: center;
+}
+.login-card {
+  flex-wrap: wrap;
+  justify-self: center;
+  place-content: center;
+  display: flex;
+  position: relative;
+  box-shadow: 6px 3px 7.5px 0px #00000040;
+  /* width: 45%; */
+  min-width: 500px;
+  /* height: 46.675%; */
+  border-radius: 10px;
+  /* width: 864;
+height: 435; */
+  /* top: 322px;
+  left: 528px; */
+
+  /* background-color: white; */
+  .card-left {
+    width: 532px;
+    height: 435px;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    /* border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; */
+    padding: 36px;
+    background: #f1f3fc;
+  }
+  .login-form {
+    width: 532px;
+    height: 435px;
+    gap: 36px;
+    /* border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; */
+    padding: 36px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    .form-title {
+      font-family: Noto Sans KR;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 160%;
+      letter-spacing: 0%;
+      color: #ffa36d;
+    }
+    label {
+      font-family: Noto Sans KR;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 160%;
+      letter-spacing: -2%;
+    }
+    input {
+      width: 100%;
+      height: 36px;
+      justify-content: space-between;
+      border-radius: 5px;
+      border-width: 1px;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+    .login-submit {
+      /* margin-top: 30px; */
+      width: 100%;
+      height: 40px;
+      gap: 10px;
+      border-radius: 10px;
+      background: #ffa36d;
+      color: white;
+    }
+  }
+}
+
+/* width: 1920;
+height: 1080;
+top: -1574px; */
+.react-flow__handle {
+  /* opacity: 0; */
+}
